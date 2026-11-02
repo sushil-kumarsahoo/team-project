@@ -14,7 +14,7 @@ model User {
   password  String
   role      Role     @default(USER)
   teamId    String?
-  Team      Team?    @relation(fields: [teamId], references: [id], onDelete: SetNull)
+  team      Team?    @relation(fields: [teamId], references: [id], onDelete: SetNull)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
