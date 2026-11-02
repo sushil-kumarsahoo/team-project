@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
         return response;
 
     } catch (error) {
-        console.error("Registration failed");
-        return NextResponse.json({ error: "Internal server error, Somethig went wrong!" }, { status: 500 })
+        console.error("Registration failed", error);
+        return NextResponse.json({ error: "Internal server error, Something went wrong!" }, { status: 500 })
     }
 }
