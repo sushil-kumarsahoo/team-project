@@ -9,7 +9,6 @@ interface HeaderProps {
 
 const Header = ({ user }: HeaderProps) => {
   const pathname = usePathname();
-  const user1 = false;
   const navigation = [
     { name: "Home", href: "/", show: true },
     { name: "Dashboard", href: "/dashboard", show: true },
@@ -52,7 +51,7 @@ const Header = ({ user }: HeaderProps) => {
 
           {/* User Info */}
           <div className="flex items-center space-x-4">
-            {user1 ? (
+            {user ? (
               <>
                 <span className="text-slate-300 text-sm">sushil</span>
                 <button

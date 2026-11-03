@@ -1,15 +1,15 @@
-import React from 'react'
-import Header from "../components/layout/Header"
+import React from "react";
+import Header from "../components/layout/Header";
+import { apiClient } from "../lib/apiClient";
 
-const layout = ({ children }:{ children: React.ReactNode }) => {
+const layout = async ({ children }: { children: React.ReactNode }) => {
+  const user = await apiClient.getCurrentUser();
   return (
     <>
-     <Header />
-     <main className="container mx-auto px-4 py-8">
-       {children}
-     </main>
+      <Header user={user || null} />
+      <main className="container mx-auto px-4 py-8">{children}</main>
     </>
-  )
-}
+  );
+};
 
-export default layout
+export default layout;
