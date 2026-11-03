@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getCurrentUser } from "../lib/auth";
+import { getCurrentUser } from "@/app/lib/auth";
 import { Prisma } from "@/app/generated/prisma/client";
-import { Role } from "../types";
-import { prisma } from "../lib/db";
+import { Role } from "@/app/types/index";
+import { prisma } from "@/app/lib/db";
 
 export async function GET(request: NextRequest) {
     try {

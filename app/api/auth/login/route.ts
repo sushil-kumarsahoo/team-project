@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "../../lib/db";
-import { generateToken, verifyPassword } from "../../lib/auth";
-import { Role } from "../../types";
+import { prisma } from "@/app/lib/db";
+import { generateToken, verifyPassword } from "@/app/lib/auth";
+import { Role } from "@/app/types/index";
 
 export async function POST(request: NextRequest) {
     try {
