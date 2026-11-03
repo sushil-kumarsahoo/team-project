@@ -34,19 +34,6 @@ export async function PATCH(
             }, { status: 404 })
         }
 
-        const { teamId } = await request.json();
-        if (teamId) {
-            const team = await prisma.team.findUnique({
-                where: { id: teamId },
-            });
-
-            if (!team) {
-                return NextResponse.json({
-                    error: "Team not found",
-                }, { status: 404 });
-            }
-        }
-
         //update ysers team assignment
         const updateUser = await prisma.user.update({
             where: { id: userId },
