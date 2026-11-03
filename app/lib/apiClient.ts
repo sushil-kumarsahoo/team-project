@@ -35,7 +35,7 @@ class ApiClient {
     async register(userData: unknown) {
         return this.request("/api/auth/register", {
             method: "POST",
-            body: JSON.stringify({ userData }),
+            body: JSON.stringify( userData ),
         })
     }
 
