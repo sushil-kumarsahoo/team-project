@@ -2,6 +2,7 @@
 import { User } from "@/app/types/index";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useAuth } from "@/app/provider/authProvider";
 
 interface HeaderProps {
   user: User | null;
@@ -9,6 +10,7 @@ interface HeaderProps {
 
 const Header = ({ user }: HeaderProps) => {
   const pathname = usePathname();
+  const {logout} = useAuth();
   const navigation = [
     { name: "Home", href: "/", show: true },
     { name: "Dashboard", href: "/dashboard", show: true },
@@ -53,9 +55,9 @@ const Header = ({ user }: HeaderProps) => {
           <div className="flex items-center space-x-4">
             {user ? (
               <>
-                <span className="text-slate-300 text-sm">sushil</span>
+                <span className="text-slate-300 text-sm">{user.name} ({user.role})</span>
                 <button
-                  onClick={() => {}}
+                  onClick={logout}
                   className="px-3 py-2 rounded bg-red-600 text-white hover:bg-red-700"
                 >
                   Logout

@@ -184,11 +184,11 @@ const AdminDashBoard = ({ users, teams, currentUser }: AdminDashboardProps) => {
                       </td>
                       <td className="py-2 text-slate-300">
                         {teamManagers.length > 0 ? (
-                          <div className="flex flex-wrap gp-1">
+                          <div className="flex flex-wrap gp-1 gap-1">
                             {teamManagers.map((manager) => (
                               <span
                                 key={manager.id}
-                                className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded text-sm "
+                                className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded text-sm"
                                 title={manager.name}
                               >
                                 {manager.name}

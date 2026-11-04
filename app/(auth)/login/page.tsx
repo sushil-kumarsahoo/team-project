@@ -39,7 +39,7 @@ const LoginPage = () => {
             Or{" "}
             <Link
               className="font-medium text-blue-400 hover:text-blue-300"
-              href={"/login"}
+              href={"/register"}
             >
               Register account
             </Link>

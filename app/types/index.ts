@@ -17,6 +17,8 @@ export interface User {
     updatedAt: Date;
 }
 
+export type SafeUser = Omit<User, "password">;
+
 export interface Team {
     id: string;
     name: string;

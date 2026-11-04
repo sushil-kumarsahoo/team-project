@@ -29,6 +29,8 @@ class ApiClient {
             throw new Error(error.error || "Request failed");
         }
 
+        return response.json();
+
     }
 
     // Auth methods
